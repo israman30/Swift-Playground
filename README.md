@@ -2,7 +2,7 @@
 ##### by
 #### Israel Manzo
 This repository will review strings, integers, duobles, booleans, functions, classes and more swift properties and methods.
-Este repository reivsa propiedades, metodos, funciones y variables en el lenguage the programacion swift.
+Este repository revisa propiedades, metodos, funciones y variables en el lenguage the programacion swift.
 ## Variables
 > Variables are mutable
 >> Variables pueden ser alteradas
