@@ -52,6 +52,21 @@ var other = 0.5
 > In computer science, the Boolean data type is a data type, having two values (usually denoted true and false), intended to represent the truth values of logic and Boolean algebra.
 > > En ciencias de computacion, los tipo boolean es tipo de datos, tienen dos valores (usualmente denotados como verdadero o falso), intentando representar el verdadero valor de la logica algebraica.
 
+#### Example:
+```
+var a = 2
+var b = 3
+
+// a is not equal to b
+a == b <- False
+
+let day = "Monday"
+let firstDay = "Monday"
+
+// day is equal to firstDay
+day == firstDay <- True
+```
+
 ## Arrays
 > In computer science, array programming languages (also known as vector or multidimensional languages) generalize operations on scalars to apply transparently to vectors, matrices, and higher-dimensional arrays.
 > > En ciencias de computacion, programa de lenguaje array (tambien conocido como vector o multidimensional lenguaje) generaliza operaciones para aplicar transparencia a vectores, matrices y altas dimensiones de colleccion.
