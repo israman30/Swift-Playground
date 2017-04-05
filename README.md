@@ -5,7 +5,7 @@ This repository will review strings, integers, duobles, booleans, functions, cla
 Este repository revisa propiedades, metodos, funciones y variables en el lenguage the programacion swift.
 
 ## Variables
-> variable is a value that can change, depending on conditions or on information passed to the program.
+> Variable is a value that can change, depending on conditions or on information passed to the program.
 > > Variable is un valor que cambia, dependiendo de condiciones o informacion pasada al programa.
 
 > Variables are mutable
