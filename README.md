@@ -12,12 +12,10 @@ Este repository revisa propiedades, metodos, funciones y variables en el lenguag
 
 ### String
 ```
-var letra = "A" // Are mutable
-let palabra = "Me" // Are not mutable
+var letra = "A" 
+let palabra = "Me" 
 var stringWord:String = "Buenos Dias"
 
-// A string can be a single word or sentence or a paragraph
-// Example:
 var word = "a"
 var sentence = "Hello, how are you today?"
 var paragraph = "This is a test to create an paragraph to demostrate a string. Esta linea es para aprender que un string puede contener un parrafo."
