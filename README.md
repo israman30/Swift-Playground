@@ -9,14 +9,14 @@ Este repository revisa propiedades, metodos, funciones y variables en el lenguag
 > > Variable is un valor que cambia, dependiendo de condiciones o informacion pasada al programa.
 
 > Variables are mutable
->> Variables pueden ser alteradas
+> > Variables pueden ser alteradas
 
 > Constants are not mutables
 > > Constantes no pueden ser cambiadas, alteradas o mutadas
 
 ### String
 > In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
-> > En lenguage the programacion, un string si tradicionalmente una sequencia de caracteres, en una variable o una constante.
+> > En lenguaje the programacion, un string es tradicionalmente una sequencia de caracteres, en una variable o en una constante.
 
 #### Example:
 ```
@@ -38,9 +38,23 @@ var paragraph = "This is a test to create an paragraph to demostrate a string. E
 var number = 2
 var integer = 120
 ```
+
+## Doubles
+> Double is a fundamental type built into the compiler and used to define numeric variables holding numbers with decimal points, which accommodate fractions.
+> > Dobles es un tipo fundamental construido en el compailer y usado para definir variables numericas que contienen decimales, la cual acomoda fracciones.
+
+#### Example:
+```
+var double = 0.1123
+var other = 0.5
+```
+## Boolean
+> In computer science, the Boolean data type is a data type, having two values (usually denoted true and false), intended to represent the truth values of logic and Boolean algebra.
+> > En ciencias de computacion, los tipo boolean es tipo de datos, tienen dos valores (usualmente denotados como verdadero o falso), intentando representar el verdadero valor de la logica algebraica.
+
 ## Arrays
 > In computer science, array programming languages (also known as vector or multidimensional languages) generalize operations on scalars to apply transparently to vectors, matrices, and higher-dimensional arrays.
-> > En ciencias de computacion, programa de lenguaje arra (tambien conocido como vector o multidimensional lenguaje) generaliza operaciones para aplicar tranparencia a vectores, matrices y latos dimensiones de colleccion.
+> > En ciencias de computacion, programa de lenguaje array (tambien conocido como vector o multidimensional lenguaje) generaliza operaciones para aplicar transparencia a vectores, matrices y altas dimensiones de colleccion.
 
 #### Example:
 ```
