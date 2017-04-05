@@ -70,3 +70,57 @@ func reverse(word: String)-> String {
     return reversed
 }
 reverse(word: "Hello world everyone")
+
+
+// Operators
+// Unary, Binary, Ternary
+// Unary operates in one targer
+// Binary operates in two targets
+
+// ============== Integers ================
+
+// Integers are represented by numbers
+// Integers son representados por numeros
+let numbers = 10
+
+var number:Int = 5
+
+// Ineteger array
+var numbersArray = [1, 2, 3, 4, 5, 6]
+
+// Appenging or Adding a new element to the array
+// Aderiendo un nuevo elemento en el array
+numbersArray.append(7)
+
+// or could be
+let y = 8 // y contains 7 (y contiene el valor de 7)
+
+numbersArray.append(y) // now we append y = 7 to the array(Ahora aderimos y al array)
+
+// Now we remove the value of the last index position [7] = 8
+// Ahora removemos el valor de el index en la ultima posicion [7] = 8
+
+// array    [1, 2, 3, 4]
+// position [0, 1, 2, 3] or [0] = 1, [1] = 2, [2] = 3, [3] = 4
+
+
+let index = numbersArray.remove(at: 7)
+
+// The constant index contains now the value of the last index [7] = 8
+// La constante index contiene el valor del ultimo index del array [7] = 8
+index
+
+// The array is now [1,2,3,4,5,6,7]
+numbersArray
+
+// Now we insert the index at the same position
+// Ahora insertamos el index en la misma posicion
+numbersArray.insert(index, at: 7)
+
+// Now the array is complete
+// Ahora el array esta completo
+numbersArray
+
+
+
+
