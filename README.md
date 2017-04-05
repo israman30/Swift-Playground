@@ -20,6 +20,12 @@ var word = "a"
 var sentence = "Hello, how are you today?"
 var paragraph = "This is a test to create an paragraph to demostrate a string. Esta linea es para aprender que un string puede contener un parrafo."
 ```
+
+### Integers
+```
+var number = 2
+var integer = 120
+```
 ## Arrays
 Array is a collection of elementes that could be any type.
 
