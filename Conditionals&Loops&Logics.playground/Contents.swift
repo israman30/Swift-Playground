@@ -7,9 +7,13 @@ import UIKit
 
 // Example: This simple statement
 if "John" == "Johnny" {
+    
     print("The are the same guy")
+    
 } else {
+    
     print("The are not the same guy")
+    
 }
 
 
@@ -19,9 +23,15 @@ var age = "21"
 var name = "Tom"
 
 if name == age {
+    
     print("Her is allow to drink")
+    
 } else if name != age {
+    
     print("He is not allow to drink yet")
+    
 } else {
+    
     print("He is ready for his beer.")
+    
 }
