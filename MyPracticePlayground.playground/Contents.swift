@@ -15,6 +15,8 @@ var letra = "A" // Are mutable
 let palabra = "Me" // Are not mutable
 
 
+
+
 // ============= STRING ===============
 var stringWord:String = "Buenos Dias"
 
@@ -77,6 +79,9 @@ reverse(word: "Hello world everyone")
 // Unary operates in one targer
 // Binary operates in two targets
 
+
+
+
 // ============== Integers ================
 
 // Integers are represented by numbers
@@ -120,6 +125,41 @@ numbersArray.insert(index, at: 7)
 // Now the array is complete
 // Ahora el array esta completo
 numbersArray
+
+
+
+
+
+
+// ============== Doubles ================
+
+// Doubles contain fractions and decimal numbers
+// Double contienen fracciones y numeros decimales
+
+let double = 1.234
+var numbeDouble:Double = 0.5
+
+
+
+
+
+// ============== Boolean ================
+
+// Boolean denotes values true or false
+// Boolean denota valores verdaderos o falsos
+
+var isTrue = true
+var isFalse = false
+
+// Comparing both values is always false
+// Comparando los valores es siempre falso
+isTrue == isFalse
+
+// Same value is always true
+// Valores similares es siempre verdadero
+isTrue == isTrue
+isFalse == isFalse
+
 
 
 
