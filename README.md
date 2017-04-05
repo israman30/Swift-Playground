@@ -26,5 +26,12 @@ Array is a collection of elementes that could be any type.
 #### Example:
 ```
 // String array
-var string = ["Hello", "World", "Hola"]
+var words = ["Hello", "World", "Hola"]
+
+// Int Array
+var numbers = [1, 2, 3, 4, 5]
+
+// Double Array
+var doubles = [0.1, 0.2, 0.3, 0.4, 0.5]
+
 ```
