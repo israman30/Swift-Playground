@@ -11,6 +11,10 @@ Este repository revisa propiedades, metodos, funciones y variables en el lenguag
 > > Constantes no pueden ser cambiadas, alteradas o mutadas
 
 ### String
+> In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
+> > En lenguage the programacion, un string si tradicionalmente una sequencia de caracteres, en una variable o una constante.
+
+#### Example:
 ```
 var letra = "A" 
 let palabra = "Me" 
@@ -22,12 +26,17 @@ var paragraph = "This is a test to create an paragraph to demostrate a string. E
 ```
 
 ### Integers
+> Int is a fundamental type built into the compiler and used to define numeric variables holding whole numbers.
+> > Integer is un tipo fundamental construido en el compailer y usado para definir variables numericas, soportado por numeros.
+
+#### Example:
 ```
 var number = 2
 var integer = 120
 ```
 ## Arrays
-Array is a collection of elementes that could be any type.
+> In computer science, array programming languages (also known as vector or multidimensional languages) generalize operations on scalars to apply transparently to vectors, matrices, and higher-dimensional arrays.
+> > En ciencias de computacion, programa de lenguaje arra (tambien conocido como vector o multidimensional lenguaje) generaliza operaciones para aplicar tranparencia a vectores, matrices y latos dimensiones de colleccion.
 
 #### Example:
 ```
