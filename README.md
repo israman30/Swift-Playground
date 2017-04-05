@@ -31,7 +31,7 @@ var paragraph = "This is a test to create an paragraph to demostrate a string. E
 
 ### Integers
 > Int is a fundamental type built into the compiler and used to define numeric variables holding whole numbers.
-> > Integer is un tipo fundamental construido en el compailer y usado para definir variables numericas, soportado por numeros.
+> > Integer es un tipo fundamental construido en el compailer y usado para definir variables numericas, soportado por numeros.
 
 #### Example:
 ```
