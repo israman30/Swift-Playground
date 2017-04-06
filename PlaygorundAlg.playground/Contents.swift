@@ -27,8 +27,20 @@ fizzBuzz(number: 10)
 
 
 
+// Sum of element in an array
+// Entering an array and return the sum of the elements
+// Entre un array y retuornar la suma de sus elementos
+func sum(number: [Int]) -> Int {
+    var a = 0
+    for i in number {
+        a += i
+    }
+    return a
+}
+sum(number: [1,2,3])
 
-g
+
+
 // Commont elements in array
 // Entering two arrays and returning the common elements
 
