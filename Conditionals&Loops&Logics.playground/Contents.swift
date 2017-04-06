@@ -40,7 +40,6 @@ if name == age {
 
 
 
-
 // ============ For loop ==============
 
 for number in [1,2,3,4,5] {
@@ -83,6 +82,26 @@ for country in countries {
 america
 
 
+// Using a loop and a conditional, we are going to separate the countries by North and South
+// Usando un loop y un condicinal, vamos a separar los paises por Norte y Sur
+var northAmerica = [String]()
+var southAmerica = [String]()
+
+for place in america{
+    
+    if place != "US" && place != "Canada" && place != "Mexico"{
+        
+        southAmerica.append(place)
+        
+    } else {
+        
+        northAmerica.append(place)
+        
+    }
+}
+// Now we have the countries by North and South america
+southAmerica
+northAmerica
 
 
 
