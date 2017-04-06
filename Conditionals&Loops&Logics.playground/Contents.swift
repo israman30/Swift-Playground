@@ -87,9 +87,9 @@ america
 var northAmerica = [String]()
 var southAmerica = [String]()
 
-for place in america{
+for place in america {
     
-    if place != "US" && place != "Canada" && place != "Mexico"{
+    if place != "US" && place != "Canada" && place != "Mexico" {
         
         southAmerica.append(place)
         
@@ -98,6 +98,7 @@ for place in america{
         northAmerica.append(place)
         
     }
+    
 }
 // Now we have the countries by North and South america
 southAmerica
