@@ -84,7 +84,7 @@ var doubles = [0.1, 0.2, 0.3, 0.4, 0.5]
 
 ```
 
-## Conditional if statement
+## Conditional "if" statement
 
 > Use if to specify a block of code to be executed, if a specified condition is true. Use else to specify a block of code to be executed, if the same condition is false. Use else if to specify a new condition to test, if the first condition is false.
 > > Se usa if especificamente en block de codigo a ser executado, si la condicion es verdadera. Se usa tambien para saber si la condicion es falsa. 
