@@ -24,11 +24,11 @@ if "John" == "Johnny" {
 var age = "21"
 var name = "Tom"
 
-if name <= age {
+if name == age {
     
     print("Her is allow to drink")
     
-} else if name == age {
+} else if name < age {
     
     print("He is not allow to drink yet")
     
