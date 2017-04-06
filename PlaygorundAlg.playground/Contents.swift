@@ -26,6 +26,9 @@ func fizzBuzz(number: Int) -> Int {
 fizzBuzz(number: 10)
 
 
+
+
+g
 // Commont elements in array
 // Entering two arrays and returning the common elements
 
@@ -45,6 +48,7 @@ commonElement(a: [1,3,4,5,7], b: [2,3,5,6])
 
 
 
+
 // Even numbers
 // Entering an array of numbers and we return if the array has even numbers
 
@@ -58,6 +62,11 @@ func evenNumbers(numbers: [Int]) -> Bool {
     return isEven
 }
 evenNumbers(numbers: [1,2,3,4,5,11,24,12])
+
+
+
+
+
 
 // Adding three arrays
 // Entering three arrays and return as one sorted array
