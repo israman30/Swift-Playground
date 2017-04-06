@@ -100,5 +100,27 @@ if "John" == "Johnny" {
     print("The are not the same guy")
     
 }
+```
+
+## For in loop
+> You use the for-in loop to iterate over a sequence, such as items in an array, ranges of numbers, or characters in a string.
+> > Se usa el for-in loop para iterar/numerar sobre una sequencia, una collection/array, rango de numeros, o caracteres de un string.
+
+#### Example:
+```
+for number in [1,2,3,4,5] {
+    print(number) // this will print each number in the array
+}
+
+
+// We give the array a container
+// Ponemos el array de numeros in a container
+
+let numbers = [4,3,5,12,67]
+
+for i in numbers {
+    print(i)
+}
 
 ```
+
