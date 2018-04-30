@@ -163,11 +163,12 @@ let closureHelloWorld = {(word: String) -> String in
 [Closures documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
 
 ```swift
-
+// Trailing closure sample
 func functionWithClosure(name: String, completionHandler:(_ data: String, _ response: String, _ error: String)->()){
     completionHandler("data", "response", "error")
 }
 
+// Trailing closure calls
 functionWithClosure(name: "Hello World") { (data, response, error) in
     print(data, response, error)
 }
