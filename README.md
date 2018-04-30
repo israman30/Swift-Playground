@@ -173,8 +173,12 @@ functionWithClosure(name: "Hello World") { (data, response, error) in
     print(data, response, error)
 }
 
+// print should be: "data", "response", "error"
+
 functionWithClosure(name: "Hello World", completionHandler: {
     print("$0: \($0), $1: \($1), $2: \($2)")
 })
+
+// print should be: "$0: data, $1: response, $2: error"
 
 ```
