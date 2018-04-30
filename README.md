@@ -156,3 +156,21 @@ return "Closure call -> \(word)"
 
 
 ```
+
+>> A trailing closure is written after the function call's parentheses, even though it is still an argument to the function. When you use the trailing closure syntax, you don't write the argument label for the closure as part of the function call.
+
+```swift
+
+func functionWithClosure(name: String, completionHandler:(_ data: String, _ response: String, _ error: String)->()){
+completionHandler("data", "response", "error")
+}
+
+functionWithClosure(name: "Hello World") { (data, response, error) in
+print(data, response, error)
+}
+
+functionWithClosure(name: "Hello World", completionHandler: {
+print("$0: \($0), $1: \($1), $2: \($2)")
+})
+
+```
