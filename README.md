@@ -2,7 +2,10 @@
 ##### by
 #### Israel Manzo
 
-*Apple Developer source*  [Swift 4](https://developer.apple.com/swift/) 
+*Apple Developer source*  [Swift 4](https://developer.apple.com/swift/)
+
+
+![alt text](img/swift.png)
 
 This repository will review strings, integers, duobles, booleans, functions, classes and more swift properties and methods.
 Este repository revisa propiedades, metodos, funciones y variables en el lenguage the programacion swift.
