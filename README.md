@@ -19,14 +19,15 @@ Este repository revisa propiedades, metodos, funciones y variables en el lenguag
 > > En lenguaje the programacion, un string es tradicionalmente una sequencia de caracteres, en una variable o en una constante.
 
 #### Example:
-```
+
+```swift
 var letra = "A" 
 let palabra = "Me" 
 var stringWord:String = "Buenos Dias"
 
 var word = "a"
 var sentence = "Hello, how are you today?"
-var paragraph = "This is a test to create an paragraph to demostrate a string. Esta linea es para aprender que un string puede contener un parrafo."
+var paragraph = "This is a test to create an paragraph to demostrate a string. Esta linea es para aprender que 
 ```
 
 ### Integers
