@@ -1,7 +1,11 @@
 # Swift-Playground
 ##### by
 #### Israel Manzo
+
+*Apple Developer source*
+
 [Swift 4](https://developer.apple.com/swift/)
+
 This repository will review strings, integers, duobles, booleans, functions, classes and more swift properties and methods.
 Este repository revisa propiedades, metodos, funciones y variables en el lenguage the programacion swift.
 
