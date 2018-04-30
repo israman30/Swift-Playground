@@ -35,7 +35,7 @@ var paragraph = "This is a test to create an paragraph to demostrate a string. E
 > > Integer es un tipo fundamental construido en el compailer y usado para definir variables numericas, soportado por numeros.
 
 #### Example:
-```
+```swift
 var number = 2
 var integer = 120
 ```
@@ -45,7 +45,7 @@ var integer = 120
 > > Dobles es un tipo fundamental construido en el compailer y usado para definir variables numericas que contienen decimales, la cual acomoda fracciones.
 
 #### Example:
-```
+```swift
 var double = 0.1123
 var other = 0.5
 ```
@@ -54,7 +54,7 @@ var other = 0.5
 > > En ciencias de computacion, los tipo boolean es tipo de datos, tienen dos valores (usualmente denotados como verdadero o falso), intentando representar el verdadero valor de la logica algebraica.
 
 #### Example:
-```
+```swift
 var a = 2
 var b = 3
 
@@ -73,7 +73,7 @@ day == firstDay <- True
 > > En ciencias de computacion, programa de lenguaje array (tambien conocido como vector o multidimensional lenguaje) generaliza operaciones para aplicar transparencia a vectores, matrices y altas dimensiones de colleccion.
 
 #### Example:
-```
+```swift
 // String array
 var words = ["Hello", "World", "Hola"]
 
@@ -91,7 +91,7 @@ var doubles = [0.1, 0.2, 0.3, 0.4, 0.5]
 > > Se usa if especificamente en block de codigo a ser executado, si la condicion es verdadera. Se usa tambien para saber si la condicion es falsa. 
 
 #### Example:
-```
+```swift
 if "John" == "Johnny" {
     
     print("The are the same guy")
@@ -108,7 +108,7 @@ if "John" == "Johnny" {
 > > Se usa el for-in loop para iterar/numerar sobre una sequencia, una collection/array, rango de numeros, o caracteres de un string.
 
 #### Example:
-```
+```swift
 for number in [1,2,3,4,5] {
     print(number) // this will print each number in the array
 }
@@ -124,4 +124,9 @@ for i in numbers {
 }
 
 ```
+## Closures
+
+> Closures are self-contained blocks of functionality that can be passed around and used in your code. Closures in Swift are similar to blocks in C and Objective-C and to lambdas in other programming languages.
+
+> Closures can capture and store references to any constants and variables from the context in which they are defined. This is known as closing over those constants and variables. Swift handles all of the memory management of capturing for you.
 
