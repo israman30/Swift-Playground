@@ -8,7 +8,7 @@
 ![alt text](img/swift.png)
 
 <p align="center">
-<img width="460" height="300" src="img/swift.png">
+<img width="195" height="195" src="img/swift.png">
 </p>
 
 This repository will review strings, integers, duobles, booleans, functions, classes and more swift properties and methods.
