@@ -130,6 +130,7 @@ for i in numbers {
 
 > Closures can capture and store references to any constants and variables from the context in which they are defined. This is known as closing over those constants and variables. Swift handles all of the memory management of capturing for you.
 
+[Closures](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
 
 ```swift
 // The way a function gets called
@@ -158,6 +159,8 @@ return "Closure call -> \(word)"
 ```
 
 >> A trailing closure is written after the function call's parentheses, even though it is still an argument to the function. When you use the trailing closure syntax, you don't write the argument label for the closure as part of the function call.
+
+[Closures](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html)
 
 ```swift
 
