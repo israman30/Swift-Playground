@@ -135,24 +135,24 @@ for i in numbers {
 ```swift
 // The way a function gets called
 func helloWorld(word: String) -> String {
-return "Function call -> \(word)"
+    return "Function call -> \(word)"
 }
 
 
 // Function with complition handler
 func helloWorldWithCompletionHandler(word: String, completionHandler: (_ name: String)-> Void){
-let myName = word + " " + "World"
-completionHandler(myName)
+    let myName = word + " " + "World"
+    completionHandler(myName)
 }
 
 helloWorldWithCompletionHandler(word: "Hello") { (e) in
-print("Function with completion handler call -> \(e)")
+    print("Function with completion handler call -> \(e)")
 }
 
 
 // Closure procedure
 let closureHelloWorld = {(word: String) -> String in
-return "Closure call -> \(word)"
+    return "Closure call -> \(word)"
 }
 
 
@@ -165,15 +165,15 @@ return "Closure call -> \(word)"
 ```swift
 
 func functionWithClosure(name: String, completionHandler:(_ data: String, _ response: String, _ error: String)->()){
-completionHandler("data", "response", "error")
+    completionHandler("data", "response", "error")
 }
 
 functionWithClosure(name: "Hello World") { (data, response, error) in
-print(data, response, error)
+    print(data, response, error)
 }
 
 functionWithClosure(name: "Hello World", completionHandler: {
-print("$0: \($0), $1: \($1), $2: \($2)")
+    print("$0: \($0), $1: \($1), $2: \($2)")
 })
 
 ```
