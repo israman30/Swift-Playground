@@ -130,3 +130,29 @@ for i in numbers {
 
 > Closures can capture and store references to any constants and variables from the context in which they are defined. This is known as closing over those constants and variables. Swift handles all of the memory management of capturing for you.
 
+
+```swift
+// The way a function gets called
+func helloWorld(word: String) -> String {
+return "Function call -> \(word)"
+}
+
+
+// Function with complition handler
+func helloWorldWithCompletionHandler(word: String, completionHandler: (_ name: String)-> Void){
+let myName = word + " " + "World"
+completionHandler(myName)
+}
+
+helloWorldWithCompletionHandler(word: "Hello") { (e) in
+print("Function with completion handler call -> \(e)")
+}
+
+
+// Closure procedure
+let closureHelloWorld = {(word: String) -> String in
+return "Closure call -> \(word)"
+}
+
+
+```
