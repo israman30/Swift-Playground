@@ -4,9 +4,6 @@
 
 *Apple Developer source*  [Swift 4](https://developer.apple.com/swift/)
 
-
-![alt text](img/swift.png)
-
 <p align="center">
 <img width="195" height="195" src="img/swift.png">
 </p>
