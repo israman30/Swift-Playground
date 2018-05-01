@@ -192,6 +192,8 @@ functionWithClosure(name: "Hello World", completionHandler: {
 
 >  Swift provides three primary collection types, known as arrays, sets, and dictionaries, for storing collections of values. Arrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.
 
+[Collections documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html)
+
 ### Arrays
 
 ```swift
@@ -232,6 +234,9 @@ let cards = suit.flatMap { s in
 ### Sets
 
 > You use a set instead of an array when you need to test efficiently for membership and you aren’t concerned with the order of the elements in the collection, or when you need to ensure that each element appears only once in a collection.
+
+[Sets documentation](https://developer.apple.com/documentation/swift/set)
+
 
 ```swift
 let barca: Set = ["Messi", "Suarez", "Iniesta", "Xavi", "Rivaldo", "Kluiver", "Eto"]
