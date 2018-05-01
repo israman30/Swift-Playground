@@ -187,3 +187,44 @@ functionWithClosure(name: "Hello World", completionHandler: {
 // print should be: "$0: data, $1: response, $2: error"
 
 ```
+
+## Collections
+
+>  Swift provides three primary collection types, known as arrays, sets, and dictionaries, for storing collections of values. Arrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.
+
+### Arrays
+
+```swift
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+var evenNumbers = [Int]()
+
+for num in numbers {
+    let squr = num * num
+    if squr % 2 == 0 {
+        evenNumbers.append(squr)
+    }
+}
+
+let sqrNumbers = numbers.map({$0 * $0}).filter({$0 % 2 == 0})
+// print the square of multiples of all pairs numbers
+
+
+// Pairing elements of two array in one array
+let suit = ["♡", "♢", "♤", "♧"]
+let rank = ["J", "K", "Q", "A"]
+
+var pairs = [(String, String)]()
+
+for s in suit {
+    for r in rank {
+        let p = (s, r)
+            pairs.append(p)
+        }
+}
+
+let cards = suit.flatMap { s in
+    rank.map { r in (s, r)}
+}
+// print [("♡", "J"), ("♡", "K"), ("♡", "Q"), ("♡", "A"), ("♢", "J"), ("♢", "K"), ("♢", "Q"), ("♢", "A"), ("♤", "J"), ("♤", "K"), ("♤", "Q"), ("♤", "A"), ("♧", "J"), ("♧", "K"), ("♧", "Q"), ("♧", "A")]
+```
