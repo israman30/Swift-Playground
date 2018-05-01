@@ -228,3 +228,24 @@ let cards = suit.flatMap { s in
 }
 // print [("♡", "J"), ("♡", "K"), ("♡", "Q"), ("♡", "A"), ("♢", "J"), ("♢", "K"), ("♢", "Q"), ("♢", "A"), ("♤", "J"), ("♤", "K"), ("♤", "Q"), ("♤", "A"), ("♧", "J"), ("♧", "K"), ("♧", "Q"), ("♧", "A")]
 ```
+
+### Sets
+
+> You use a set instead of an array when you need to test efficiently for membership and you aren’t concerned with the order of the elements in the collection, or when you need to ensure that each element appears only once in a collection.
+
+```swift
+let barca: Set = ["Messi", "Suarez", "Iniesta", "Xavi", "Rivaldo", "Kluiver", "Eto"]
+let sudamericans: Set = ["Messi", "Suarez", "Rivaldo"]
+
+// Substraction the matching elements
+let matchingPlayers = barca.subtracting(sudamericans)
+// print the substraction remainded of matching elements
+
+// Intersecting matching elements
+let intersectingPlayers = barca.intersection(sudamericans)
+// print the elements intersected
+
+// Union - will not duplicate elements but return one
+let allPlayers = barca.union(sudamericans)
+// print the union of all elements without repeat it
+```
