@@ -208,7 +208,7 @@ for num in numbers {
     }
 }
 
-let sqrNumbers = numbers.map({$0 * $0}).filter({$0 % 2 == 0})
+let sqrNumbers = numbers.map {$0 * $0}.filter {$0 % 2 == 0}
 // print the square of multiples of all pairs numbers
 
 
