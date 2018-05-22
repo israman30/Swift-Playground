@@ -52,6 +52,22 @@ functionWithClosure(name: "Hello World", completionHandler: {
     print("$0: \($0), $1: \($1), $2: \($2)")
 })
 
+// Calculator closure
+
+func calculator(a: Int, b: Int, operation: (Int, Int)-> Int)->Int {
+    return operation(a, b)
+}
+
+calculator(a: 3, b: 2) { (a, b) -> Int in
+    a * b
+}
+
+// We can pass a function into the closure
+func add(a: Int, b: Int)-> Int {
+    return a * b
+}
+
+calculator(a: 3, b: 2, operation: add)
 
 
 
