@@ -84,6 +84,9 @@ array.map { (a) in
 // Using anonimus parameters
 array.map { $0 + 1 }
 
+// Converting the values of type integer into type string
+let stringArray = array.map {"\($0)"}
+print(stringArray) // Output -> ["1", "2", "3", "4", "5"]
 
 
 
