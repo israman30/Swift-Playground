@@ -69,6 +69,10 @@ func add(a: Int, b: Int)-> Int {
 
 calculator(a: 3, b: 2, operation: add)
 
+// Anonimus parameters $0, $1
+// we take the sample from line 61
+let result = calculator(a: 2, b: 3 ){ $0 * $1 }
+
 
 
 
