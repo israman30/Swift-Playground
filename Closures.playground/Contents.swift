@@ -73,6 +73,17 @@ calculator(a: 3, b: 2, operation: add)
 // we take the sample from line 61
 let result = calculator(a: 2, b: 3 ){ $0 * $1 }
 
+let array = [1,2,3,4,5]
+
+// Closure map allows to transform teh array
+// We add one to each value of the array
+array.map { (a) in
+    a + 1
+}
+
+// Using anonimus parameters
+array.map { $0 + 1 }
+
 
 
 
