@@ -10,6 +10,14 @@ import UIKit
  source: https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html
  */
 
+/* Closure Expression Syntax
+    Closure expression syntax has the following general form:
+
+    { (parameters) -> return type in
+        statements
+    }
+*/
+
 // The way a function gets called
 func helloWorld(word: String) -> String {
     return "Function call -> \(word)"
