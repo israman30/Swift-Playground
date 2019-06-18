@@ -136,6 +136,8 @@ extension UITableView {
     }
 }
 
+//=====================================================================================================
+
 /*
  - Adding views programmatically as sub views
 */
@@ -151,6 +153,42 @@ extension UIStackView {
     }
 }
 
+//=====================================================================================================
 
+
+/*
+ - Spinner Animation class
+ */
+class Spinner {
+    
+    static func spinerActivity(spinner status: Bool){
+        
+        let spinner = UIActivityIndicatorView()
+        
+        if status == true {
+            spinner.isHidden = false
+            spinner.startAnimating()
+        } else {
+            spinner.isHidden = true
+            spinner.stopAnimating()
+        }
+    }
+}
+
+// Usage: -> User a downloadURL funciton
+func secondDownloadUrl(url: URL, imageURL: UIImageView){
+    // Start spinning = true
+    Spinner.spinerActivity(spinner: true)
+    do {
+        let data = try Data(contentsOf: url)
+        DispatchQueue.main.async {
+            imageURL.image = UIImage(data: data)
+            // Once image is downloaded, Start spinning = false
+            Spinner.spinerActivity(spinner: false)
+        }
+    } catch let error {
+        print("Error", error)
+    }
+}
 
 
