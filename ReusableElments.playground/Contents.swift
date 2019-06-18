@@ -61,11 +61,44 @@ extension UIImageView {
                 self.image = UIImage(data: data)
             }
         } catch let error {
-            print("Error", error)
+            print("Error", error.localizedDescription)
         }
     }
 }
 
+// URL Image class
+class URLImage {
+    
+    static func downloadUrlImage(image: URL, completion: @escaping (UIImage)-> Void) {
+        
+        URLSession.shared.dataTask(with: image) { (data, response, error) in
+            if let error = error {
+                print("Error", error.localizedDescription)
+                return
+            }
+            guard let data = UIImage(data: data!) else { return }
+            DispatchQueue.main.async {
+                completion(data)
+            }
+        }.resume()
+    }
+    
+    static func secondDownloadUrl(url: URL, completion: @escaping (UIImage)-> Void){
+        do {
+            let data = try Data(contentsOf: url)
+            DispatchQueue.main.async {
+                if let imageData = UIImage(data: data) {
+                    completion(imageData)
+                }
+            }
+        } catch let error {
+            print("Error", error.localizedDescription)
+        }
+    }
+}
+
+
+//=====================================================================================================
 
 /*
  - TableView animation
