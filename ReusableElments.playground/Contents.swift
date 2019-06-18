@@ -43,8 +43,8 @@ extension UIImageView {
     func downloadPhoto(urlPhoto: String){
         guard let url = URL(string: urlPhoto) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if error != nil {
-                print("Image couldn't download: ", error!.localizedDescription)
+            if let error = error {
+                print("Image couldn't download: ", error.localizedDescription)
                 return
             }
             DispatchQueue.main.async {
