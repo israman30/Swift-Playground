@@ -40,6 +40,7 @@ struct AlertController {
  
 */
 extension UIImageView {
+    
     func downloadPhoto(urlPhoto: String){
         guard let url = URL(string: urlPhoto) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -51,6 +52,17 @@ extension UIImageView {
                 self.image = UIImage(data: data!)
             }
         }.resume()
+    }
+    
+    func secondDownloadUrl(url: URL){
+        do {
+            let data = try Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data)
+            }
+        } catch let error {
+            print("Error", error)
+        }
     }
 }
 
