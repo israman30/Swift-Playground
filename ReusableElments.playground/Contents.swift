@@ -191,4 +191,29 @@ func secondDownloadUrl(url: URL, imageURL: UIImageView){
     }
 }
 
+/*
+  UITextField custom bottom line extension
+ - Gives to the text field a bottom line with color
+ - Dismiss the border and creates a bottom line using CALayer()
+ - Added as a sublayer
+ */
+
+extension UITextField {
+    func setTextFieldBottomLine(color: UIColor){
+        // Create a bottom line with CALayer
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect(x: 0,
+                                  y: frame.height - 2,
+                                  width: frame.width,
+                                  height: 2)
+        bottomLine.backgroundColor = color.cgColor
+        // Remove text border
+        borderStyle = .none
+        
+        // Add the line at the bottom of the textField
+        layer.addSublayer(bottomLine)
+    }
+}
+
+
 
