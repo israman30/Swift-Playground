@@ -2,7 +2,7 @@
 ##### by
 #### Israel Manzo
 
-*Apple Developer source*  [Swift 4](https://developer.apple.com/swift/)
+*Apple Developer source*  [Swift](https://developer.apple.com/swift/)
 
 ![alt text](img/swift.png)
 
