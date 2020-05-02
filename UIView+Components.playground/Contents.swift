@@ -138,3 +138,8 @@ extension UIColor {
     }
 }
 
+````
+func sayHello() {
+    print("hello")
+}
+````
