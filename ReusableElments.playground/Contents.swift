@@ -2,10 +2,6 @@
 
 import UIKit
 
-
-
-
-//=====================================================================================================
 /*
  UIImageView donwloader
  - Parameter as String: This method will serialize the an image URL taking as String.
@@ -71,20 +67,7 @@ class URLImage {
 
 
 
-/*
- - Adding views programmatically as sub views
-*/
-extension UIView {
-    func addSubViews(_ views: UIView...) {
-        views.forEach { addSubview($0) }
-    }
-}
 
-extension UIStackView {
-    func addArrangeSubviews(_ views: UIView...) {
-        views.forEach { addArrangedSubview($0) }
-    }
-}
 
 //=====================================================================================================
 

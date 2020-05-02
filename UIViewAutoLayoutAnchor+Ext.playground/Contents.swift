@@ -1,5 +1,23 @@
 import UIKit
 
+/*
+ - Adding views programmatically as sub views
+*/
+
+// MARK: - Adding a list of views on a parent view
+extension UIView {
+    func addSubViews(_ views: UIView...) {
+        views.forEach { addSubview($0) }
+    }
+}
+
+// MARK: - Adding a list of views on a stack view
+extension UIStackView {
+    func addArrangeSubviews(_ views: UIView...) {
+        views.forEach { addArrangedSubview($0) }
+    }
+}
+
 struct AnchoredConstraints {
     var top, left, bottom, right, width, height: NSLayoutConstraint?
 }
