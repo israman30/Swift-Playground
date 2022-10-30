@@ -1,5 +1,9 @@
 import UIKit
 
+/**
+ Async stands for asynchronous and can be seen as a method attribute making it clear that a method performs asynchronous work.
+ */
+
 /*
  Resources:
  https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html
@@ -12,6 +16,7 @@ import UIKit
 
 /// await: Indicates that your code might halt its execution while it awaits the return of an asynchronous function/property.
 
+// Error handler enum
 enum APIError: Error {
     case badURL
     case badImage
@@ -30,4 +35,39 @@ func fetchImage(from url: URL) async throws -> UIImage {
     }
     // return valid image
     return thumbnail
+}
+
+do {
+    let image = try await fetchImage(from: URL(string: "") ?? "")
+} catch {
+    print("Error")
+}
+
+
+enum UserError: Error {
+    case invalidCount, dataTooLong
+}
+
+func fetchUsers(count: Int) async throws -> [String] {
+    if count > 3 {
+        throw UserError.invalidCount
+    }
+    return Array(["Eva", "John", "Lana"].prefix(count))
+}
+
+func save(users: [String]) async throws -> String {
+    let saveUser = users.joined(separator: ", ")
+    if saveUser.count > 32 {
+        throw UserError.dataTooLong
+    }
+    return "Saved \(saveUser)"
+}
+
+func updateUsers() async {
+    do {
+        let users = try await fetchUsers(count: 3)
+        let result = try await save(users: users)
+    } catch {
+        print("No users")
+    }
 }
