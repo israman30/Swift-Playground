@@ -38,7 +38,7 @@ func fetchImage(from url: URL) async throws -> UIImage {
 }
 
 do {
-    let image = try await fetchImage(from: URL(string: "") ?? "")
+    let image = try await fetchImage(from: URL(string: "")!)
 } catch {
     print("Error")
 }
@@ -69,5 +69,50 @@ func updateUsers() async {
         let result = try await save(users: users)
     } catch {
         print("No users")
+    }
+}
+
+// MARK: Trying to fetch an API
+
+struct ServerStatus: Decodable {
+    let data: Data?
+    init(data: Data? = nil) {
+        self.data = data
+    }
+}
+
+class NetworkService {
+    // Pre-async/await asynchrony
+    func fetchServerStatus(completion: @escaping(ServerStatus) -> Void) {
+        URLSession.shared.dataTask(with: URL(string: "http://amazingserver.com/status")!) { data, response, error in
+            do {
+                let serverStatus = try JSONDecoder().decode(ServerStatus.self, from: data!)
+                completion(serverStatus)
+            } catch {}
+        }
+        .resume()
+    }
+    
+    func fetcheServerStatusWithAsync() async throws -> ServerStatus {
+        let (data, _) = try await URLSession.shared.data(from: URL(string: "http://amazingserver.com/status")!)
+        return ServerStatus(data: data)
+    }
+}
+
+struct ViewModel {
+    var serverStatus = ServerStatus()
+}
+
+class ViewController {
+    let api = NetworkService()
+    var vm = ViewModel()
+    func viewDidAppear() {
+        api.fetchServerStatus { [weak self] status in
+            //  do something
+        }
+        
+        Task {
+            vm.serverStatus = try await api.fetcheServerStatusWithAsync()
+        }
     }
 }
