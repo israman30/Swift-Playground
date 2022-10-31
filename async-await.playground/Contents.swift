@@ -20,6 +20,8 @@ import UIKit
 enum APIError: Error {
     case badURL
     case badImage
+    case badResponse
+    case badDecoding(Error)
 }
 
 func fetchImage(from url: URL) async throws -> UIImage {
@@ -110,9 +112,51 @@ class ViewController {
         api.fetchServerStatus { [weak self] status in
             //  do something
         }
-        
         Task {
             vm.serverStatus = try await api.fetcheServerStatusWithAsync()
         }
     }
+}
+
+// MARK: - Decoding an array of articles using async await
+struct Posts: Codable {
+    let id: Int
+    let title: String
+    let body: String
+}
+
+/// Fetching api using the original way to do
+
+func fetchPosts(completion: @escaping(Result<[Posts], APIError>) -> Void) {
+    URLSession.shared.dataTask(with: URL(string: "https://jsonplaceholder.typicode.com/posts")!) { data, response, error in
+        guard error != nil else {
+            completion(.failure(.badURL))
+            return
+        }
+        guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode), let data = data else {
+            completion(.failure(.badResponse))
+            return
+        }
+        
+        do {
+            let posts = try JSONDecoder().decode([Posts].self, from: data)
+            completion(.success(posts))
+        } catch {
+            completion(.failure(.badDecoding(error)))
+        }
+    }
+    .resume()
+}
+
+/// Replacing the above method using async await
+
+func fetchPostsWithAsync() async throws {
+    guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+    let request = URLRequest(url: url)
+    let (data, response) = try await URLSession.shared.data(for: request)
+    
+    guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+        return
+    }
+    let posts = try JSONDecoder().decode([Posts].self, from: data)
 }
