@@ -3,7 +3,7 @@ import UIKit
 // MARK: - Alert - Action Sheet Controller
 struct AlertController {
     
-    static func alert(viewController: UIAlertController, title: String, message: String){
+    static func alert(viewController: UIAlertController, title: String, message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -12,7 +12,7 @@ struct AlertController {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
-    static func actionSheet(viewController: UIAlertController, title: String, message: String){
+    static func actionSheet(viewController: UIAlertController, title: String, message: String) {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
