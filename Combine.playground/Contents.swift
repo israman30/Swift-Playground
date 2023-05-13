@@ -25,3 +25,31 @@ import Combine
         print("Received value: \(value)")
     }
 
+/*
+ NotificationCenter.Publisher
+ Let’s create a new publisher for a new-event notification.
+ */
+
+extension Notification.Name {
+    static let addedEvent = Notification.Name("added_event")
+}
+
+struct Event {
+    let title: String
+    let scheduled: Date
+}
+
+let eventPublisher = NotificationCenter.Publisher(center: .default, name: .addedEvent)
+    .map { notification -> String? in
+        return (notification.object as? Event)?.title ?? ""
+    }
+
+let theEventTitleLabel = UILabel()
+
+let newEventLabelSubscriber = Subscribers.Assign(object: theEventTitleLabel, keyPath: \.text)
+eventPublisher.subscribe(newEventLabelSubscriber)
+
+let event = Event(title: "Combine framework", scheduled: Date())
+NotificationCenter.default.post(name: .addedEvent, object: event)
+
+print("Event notified: \(theEventTitleLabel.text ?? "No event")")
