@@ -11,10 +11,8 @@ extension Array where Element: AdditiveArithmetic {
 extension Array where Element == Int {
     func removeDuplicateElements() -> [Element] {
         var newArray = [Element]()
-        self.forEach {
-            if !newArray.contains($0) {
-                newArray.append($0)
-            }
+        for element in self where !newArray.contains(element) {
+            newArray.append(element)
         }
         return newArray
     }
@@ -24,10 +22,8 @@ extension Array where Element == Int {
 extension Array where Element: Equatable {
     mutating func removeDuplicateCharacters() {
         var newArray = [Element]()
-        self.forEach {
-            if !newArray.contains($0) {
-                newArray.append($0)
-            }
+        for element in self where !newArray.contains(element) {
+            newArray.append(element)
         }
         self = newArray
     }
