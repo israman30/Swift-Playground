@@ -1,6 +1,6 @@
 import UIKit
 
-// Sum all Elements in an Array
+// Sum all Elements in an Array when it's numeric 
 extension Array where Element: AdditiveArithmetic {
     func sum() -> Element {
         reduce(.zero, +)
