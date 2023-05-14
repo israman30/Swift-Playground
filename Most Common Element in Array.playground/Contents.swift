@@ -1,6 +1,6 @@
 import UIKit
 
-var array = [1, 2, 2, 3, 2,4]
+var array = [1, 2, 2, 3, 2, 4]
 
 func mostCommonElement(of array: [Int]) -> Int {
     var dict = [Int:Int]()
@@ -20,3 +20,25 @@ func mostCommonElement(of array: [Int]) -> Int {
 
 mostCommonElement(of: array)
 
+func mostCommonElement2(of array: [Int]) -> (value: Int, count: Int) {
+    var dict = [Int:Int]()
+    array.forEach { dict[$0] = (dict[$0] ?? 0) + 1 }
+    
+    if let (value, count) = dict.max(by: {$0.1 < $1.1}) {
+        print("\(value) occurs \(count) times")
+        return (count, value)
+    }
+    return (0, 0)
+}
+mostCommonElement2(of: array)
+
+func mosCommon3(of array: [Int]) -> (value: Int, count: Int) {
+    let dict = array.reduce(into: [:]) { $0[$1, default: 0] += 1 }
+    if let (value, count) = dict.max(by: {$0.1 < $1.1}) {
+        print("\(value) occurs \(count) times")
+        return (count, value)
+    }
+    return (0, 0)
+}
+
+mosCommon3(of: array)
