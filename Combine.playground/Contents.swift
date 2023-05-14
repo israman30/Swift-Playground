@@ -64,7 +64,9 @@ print("Event notified: \(theEventTitleLabel.text ?? "No event")")
 
 // MARK: - Timer Subscription, reating a Subscription
 
-let subscriptor = Timer.publish(every: 1, on: .main, in: .common)
+var subscriptor: Cancellable? = Timer.publish(every: 1, on: .main, in: .common)
+/// or
+//let subscriptor = Timer.publish(every: 1, on: .main, in: .common)
     .autoconnect()
     .sink { output in
         print("Finish stream with: \(output)")
@@ -78,9 +80,9 @@ let subscriptor = Timer.publish(every: 1, on: .main, in: .common)
  */
 RunLoop.main.schedule(after: .init(Date(timeIntervalSinceNow: 4))) {
     print(" - cancel subscription")
-    subscriptor.cancel()
+//    subscriptor.cancel()
     /// or
-//    subscriptor = nil
+    subscriptor = nil
 }
 
 /*
@@ -94,3 +96,26 @@ RunLoop.main.schedule(after: .init(Date(timeIntervalSinceNow: 4))) {
  receiveValue block: called when any value is published
  */
 
+class SomeViewcontroller: UIViewController {
+    
+    @Published var isEnabled = false
+    @IBOutlet private weak var accepttSwitch: UISwitch!
+    @IBOutlet private weak var nextButton: UIButton!
+    
+    private var switchSubscriber: AnyCancellable?
+    private var subscribers = Set<AnyCancellable>()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /// Save cancellable subscription
+        $isEnabled
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isEnabled, on: nextButton)
+            .store(in: &subscribers) /// store the subscription
+    }
+    
+    @IBAction func didSwitch(_ sender: UISwitch) {
+        isEnabled = sender.isOn
+    }
+}
