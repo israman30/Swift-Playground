@@ -28,6 +28,8 @@ import UIKit
  
  */
 
+// source: https://github.com/kodecocodes/swift-algorithm-club/blob/master/Binary%20Search%20Tree/Solution%201/BinarySearchTree.playground/Sources/BinarySearchTree.swift
+
 var array = [2, 3, 4, 5, 6, 7, 8]
 
 // Representing in memory
@@ -46,10 +48,13 @@ extension BinaryTree {
     var isRoot: Bool {
         parent == nil
     }
+    public var hasLeaf: Bool {
+        return left == nil && right == nil
+    }
     
     public var isLeftChild: Bool {
         return parent?.leftNode === self
-      }
+    }
     
     public var isRightChild: Bool {
         return parent?.rightNode === self
@@ -155,6 +160,23 @@ extension BinaryTree {
     
     func contains(value: Int) -> Bool {
         search(value: value) != nil
+    }
+    
+    func depth() -> Int {
+        var node = self
+        var count = 0
+        while let parent = node.parent {
+            node = parent
+            count += 1
+        }
+        return count
+    }
+    
+    func height() -> Int {
+        if hasLeaf {
+            return 0
+        }
+        return 1 + max(leftNode?.height() ?? 0, rightNode?.height() ?? 0)
     }
 }
 
