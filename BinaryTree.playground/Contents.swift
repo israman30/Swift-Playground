@@ -21,4 +21,31 @@ import UIKit
 // =    16. Mirror the tree                                                     =
 // ==============================================================================
 
+/**
+                     5                              H = 3, D = 0
+                3                   7
+            2               4     6             8           H = 0, D = 3
+ 
+ */
 
+// Representing in memory
+class Node {
+    var leftNode: Node?
+    var rightNode: Node?
+    var value: Int
+    init(_ value: Int) {
+        self.value = value
+    }
+}
+
+// contruct a binary tree from array
+func binaryTreeFrom(arr: [Int], firtIndex: Int, lastIndex: Int) -> Node? {
+    if lastIndex < firtIndex {
+        return nil
+    }
+    let mid = (firtIndex + lastIndex) / 2
+    let node = Node(arr[mid])
+    node.leftNode = binaryTreeFrom(arr: arr, firtIndex: firtIndex, lastIndex: mid - 1)
+    node.rightNode = binaryTreeFrom(arr: arr, firtIndex: mid + 1, lastIndex: lastIndex)
+    return node
+}
