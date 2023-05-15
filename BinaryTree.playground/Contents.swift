@@ -48,32 +48,33 @@ extension BinaryTree {
     var isRoot: Bool {
         parent == nil
     }
-    public var hasLeaf: Bool {
-        return left == nil && right == nil
+    
+    var hasLeaf: Bool {
+        leftNode == nil && rightNode == nil
     }
     
-    public var isLeftChild: Bool {
+    var isLeftChild: Bool {
         return parent?.leftNode === self
     }
     
-    public var isRightChild: Bool {
-        return parent?.rightNode === self
+    var isRightChild: Bool {
+        parent?.rightNode === self
     }
     
-    public var hasLeftChild: Bool {
-        return leftNode != nil
+    var hasLeftChild: Bool {
+        leftNode != nil
     }
     
-    public var hasRightChild: Bool {
-        return rightNode != nil
+    var hasRightChild: Bool {
+        rightNode != nil
     }
     
-    public var hasAnyChild: Bool {
-        return hasLeftChild || hasRightChild
+    var hasAnyChild: Bool {
+        hasLeftChild || hasRightChild
     }
     
-    public var hasBothChildren: Bool {
-        return hasLeftChild && hasRightChild
+    var hasBothChildren: Bool {
+        hasLeftChild && hasRightChild
     }
     
     var treeCount: Int {
