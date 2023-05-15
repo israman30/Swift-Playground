@@ -47,6 +47,30 @@ extension BinaryTree {
         parent == nil
     }
     
+    public var isLeftChild: Bool {
+        return parent?.leftNode === self
+      }
+    
+    public var isRightChild: Bool {
+        return parent?.rightNode === self
+    }
+    
+    public var hasLeftChild: Bool {
+        return leftNode != nil
+    }
+    
+    public var hasRightChild: Bool {
+        return rightNode != nil
+    }
+    
+    public var hasAnyChild: Bool {
+        return hasLeftChild || hasRightChild
+    }
+    
+    public var hasBothChildren: Bool {
+        return hasLeftChild && hasRightChild
+    }
+    
     var treeCount: Int {
         (leftNode?.treeCount ?? 0) + 1 + (rightNode?.treeCount ?? 0)
     }
@@ -67,6 +91,70 @@ extension BinaryTree {
                 rightNode?.parent = self
             }
         }
+    }
+    
+    func remove() -> BinaryTree? {
+        
+        let replace: BinaryTree?
+        
+        if let left = leftNode {
+            replace = left.minimum()
+        } else if let right = rightNode {
+            replace = right.maximun()
+        } else {
+            replace = nil
+        }
+        
+        replace?.remove()
+        
+        replace?.rightNode = rightNode
+        replace?.leftNode = leftNode
+        rightNode?.parent = replace
+        leftNode?.parent = replace
+        reconnectParent(to: replace)
+        return nil
+    }
+    
+    func reconnectParent(to node: BinaryTree?) {
+        if let parent = parent {
+          if isLeftChild {
+            parent.leftNode = node
+          } else {
+            parent.rightNode = node
+          }
+        }
+        node?.parent = parent
+      }
+    
+    func minimum() -> BinaryTree? {
+        var node = self
+        while let next = node.leftNode {
+            node = next
+        }
+        return node
+    }
+    
+    func maximun() -> BinaryTree? {
+        var node = self
+        while let next = node.rightNode {
+            node = next
+        }
+        return node
+    }
+    
+    func search(value: Int) -> BinaryTree? {
+        if value == self.value {
+            return self
+        }
+        if value < self.value {
+            return leftNode?.search(value: value)
+        } else {
+            return rightNode?.search(value: value)
+        }
+    }
+    
+    func contains(value: Int) -> Bool {
+        search(value: value) != nil
     }
 }
 
