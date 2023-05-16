@@ -181,6 +181,56 @@ extension BinaryTree {
     }
 }
 
+extension BinaryTree {
+    
+    // Traversing binary tree usiong closures to visit node
+    func traverseInOrder(visit: (Int) -> Void) {
+        leftNode?.traverseInOrder(visit: visit)
+        visit(value)
+        rightNode?.traverseInOrder(visit: visit)
+    }
+    
+    func traversePreOrder(visit: (Int) -> Void) {
+        visit(value)
+        leftNode?.traversePreOrder(visit: visit)
+        rightNode?.traversePreOrder(visit: visit)
+    }
+    
+    func traversePostOrder(visit: (Int) -> Void) {
+        leftNode?.traversePostOrder(visit: visit)
+        rightNode?.traversePostOrder(visit: visit)
+        visit(value)
+    }
+    
+    // Return array tree traversing
+    func inOrderTraverse(node: BinaryTree?) -> [Int] {
+        var tree = [Int]()
+        guard let node = node else { return [] }
+        inOrderTraverse(node: node.leftNode)
+        tree.append(node.value)
+        inOrderTraverse(node: node.rightNode)
+        return tree
+    }
+    
+    func preOrderTraverse(node: BinaryTree?) -> [Int] {
+        var tree = [Int]()
+        guard let node = node else { return [] }
+        tree.append(node.value)
+        preOrderTraverse(node: node.leftNode)
+        preOrderTraverse(node: node.rightNode)
+        return tree
+    }
+    
+    func postOrderTraverse(node: BinaryTree?) -> [Int] {
+        var tree = [Int]()
+        guard let node = node else { return [] }
+        postOrderTraverse(node: node.leftNode)
+        postOrderTraverse(node: node.rightNode)
+        tree.append(node.value)
+        return tree
+    }
+}
+
 
 // contruct a binary tree from array
 func binaryTree(from arr: [Int], firtIndex: Int, lastIndex: Int) -> BinaryTree? {
