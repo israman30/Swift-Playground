@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 
 // =========================== BINARY TREE PLAYGROUND ===========================
 // =    * Binary Tree class                                                     =
