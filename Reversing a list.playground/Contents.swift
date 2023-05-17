@@ -16,7 +16,7 @@ func reversing(arr: inout [Int]) -> [Int] {
 
 //reversing(arr: &numbers)
 
-// Reversing a list diving the array 
+// Reversing a list diving the array
 func reversingDividing(arr: inout [Int]) -> [Int] {
     for i in 0..<arr.count / 2 {
         arr.swapAt(i, arr.count - 1 - i)
@@ -24,4 +24,16 @@ func reversingDividing(arr: inout [Int]) -> [Int] {
     return arr
 }
 
-reversingDividing(arr: &numbers)
+//reversingDividing(arr: &numbers)
+
+// Reversing a list with generic values
+func reversingGeneric<T>(arr: [T]) -> [T] {
+    var arr = arr
+    for i in 0..<arr.count / 2 {
+        arr.swapAt(i, arr.count - 1 - i)
+    }
+    return arr
+}
+reversingGeneric(arr: [1, 2, 3])
+reversingGeneric(arr: ["a", "b", "c"])
+
