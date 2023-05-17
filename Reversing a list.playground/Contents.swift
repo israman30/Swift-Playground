@@ -37,3 +37,15 @@ func reversingGeneric<T>(arr: [T]) -> [T] {
 reversingGeneric(arr: [1, 2, 3])
 reversingGeneric(arr: ["a", "b", "c"])
 
+
+// Reversing a list using an Array extension 
+extension Array where Element: Equatable {
+    mutating func reversing() {
+        var arr = self
+        for i in 0..<arr.count / 2 {
+            arr.swapAt(i, arr.count - 1 - i)
+        }
+        self = arr
+    }
+}
+numbers.reversing()
