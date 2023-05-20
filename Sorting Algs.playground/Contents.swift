@@ -45,4 +45,33 @@ func quickSort(on array: inout [Int]) -> [Int] {
     
     return quickSort(on: &less) + equal + quickSort(on: &greater)
 }
-quickSort(on: &array)
+//quickSort(on: &array)
+
+
+/*
+ Merge Sort
+ Source by Thomas Hanning
+ https://www.thomashanning.com/merge-sort-in-swift/
+ */
+
+func merge(left: [Int], right: [Int]) -> [Int] {
+    var mergedList: [Int] = []
+    var left = left
+    var right = right
+    while left.count > 0 && right.count > 0 {
+        if left.first! < right.first! {
+            mergedList.append(left.removeFirst())
+        } else {
+            mergedList.append(right.removeFirst())
+        }
+    }
+    return mergedList + left + right
+}
+
+func mergeSort(on array: [Int]) -> [Int] {
+    guard array.count > 1 else { return array }
+    let leftList = Array(array[0..<array.count / 2])
+    let rightList = Array(array[array.count / 2..<array.count])
+    return merge(left: mergeSort(on: leftList), right: mergeSort(on: rightList))
+}
+mergeSort(on: array)
