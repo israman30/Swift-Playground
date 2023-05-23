@@ -112,24 +112,58 @@ class LinkedList {
         }
         return dummy.next
     }
+    
+    // Insert new value in list
+    func insertNewValueList(prev: Node?, newValue: Int) {
+        if prev == nil {
+            return
+        }
+        let newNode = Node(newValue)
+        prev?.next = newNode
+    }
+    
+    func getListLength(head:Node?) -> Int{
+        var currentNode = head
+        var count = 0
+        while currentNode != nil {
+            count = count + 1
+            currentNode = currentNode?.next
+        }
+        return count
+    }
+    
+    // Get the middle of the list using iteration
+    func getMiddleOfList(head: Node?) -> Node? {
+        var current = head
+        let listLength = getListLength(head: current)
+        var mid = listLength / 2
+        while mid > 0 && current != nil {
+            current = current?.next
+            mid -= 1
+        }
+        return current
+    }
+    
+    // Get the middle of the list using fast node pointer
+    func getMiddleOfListWithPointers(head: Node?) -> Node? {
+        var slowNode = head
+        var fastNode = head
+        while fastNode != nil && fastNode?.next != nil {
+            slowNode = slowNode?.next
+            fastNode = fastNode?.next?.next
+        }
+        return slowNode
+    }
+
+
+    func printList(head: Node?) {
+        var current = head
+        while current != nil {
+            print(current?.value ?? -1)
+            current = current?.next
+        }
+    }
 }
 
-//struct LinkedList<T> {
-//    var head: LinkedListNode<T>
-//    init(head: LinkedListNode<T>) {
-//        self.head = head
-//    }
-//}
-//
-//indirect enum LinkedListNode<T> {
-//    case value(element: T, next: LinkedListNode<T>)
-//    case end
-//}
-//
-//let value3 = LinkedListNode.value(element: "C", next: .end)
-//let value2 = LinkedListNode.value(element: "B", next: value3)
-//let value1 = LinkedListNode.value(element: "A", next: value2)
-//
-//let list = LinkedList(head: value1)
 
 
