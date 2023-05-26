@@ -60,3 +60,26 @@ extension String {
 }
 "[]".balanced()
 validateParentheses("{]")
+
+/*
+ Second case
+ "()" true
+ "())" false
+ "(())" true
+ "())" false
+ */
+
+func checkForBalance(_ word: String) -> Bool {
+    var count = 0
+    word.forEach { char in
+        if char == "(" {
+            count += 1
+        } else {
+            count -= 1
+        }
+    }
+    print(count)
+    
+    return count == 0 ? true : false
+}
+checkForBalance("(())")
