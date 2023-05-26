@@ -20,3 +20,16 @@ func jewels(_ jewels: String, _ stones: String) -> Int {
     return count
 }
 jewels("aA", "aAAbbbb")
+
+func getType<T>(input: T) {
+    print("type: \(type(of: input))")
+}
+getType(input: 5)
+getType(input: "A")
+
+func reversInt(_ x: Int) -> Int {
+    let char = String(x)
+
+    return 0
+}
+reversInt(123)
