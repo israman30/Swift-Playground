@@ -15,6 +15,18 @@ func zeroCount(arr: [Int]) -> Int {
 }
 zeroCount(arr: zeros)
 
+// Moving zeros to the end of the list using containers
+func moveZeroToEnd(arr: [Int]) -> [Int] {
+    var front = [Int]()
+    var end = [Int]()
+    arr.forEach {
+        $0 != 0 ? (front.append($0)) : (end.append($0))
+    }
+    return front + end
+}
+
+//moveZeroToEnd(arr: zeros)
+
 // Move the zero to the from or end of the list
 func moveZeroToFront(arr: inout [Int]) -> [Int] {
     return arr.filter { $0 == 0 } + arr.filter { $0 != 0}
@@ -60,3 +72,5 @@ func viewToSubview(node: UIView, target: UIView) -> Bool {
     }
     return false
 }
+
+

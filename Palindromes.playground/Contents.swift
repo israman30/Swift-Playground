@@ -65,3 +65,9 @@ func hasPalindrome(for sentence: String) -> Bool {
 }
 
 hasPalindrome(for: "It's a really nice day and anna goes for a run")
+
+var number = 0 {
+    didSet {
+        
+    }
+}
