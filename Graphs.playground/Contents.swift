@@ -1,26 +1,28 @@
 import UIKit
 
-struct Vertex<T>: Equatable where T: Equatable, T: Hashable {
-    var data: T
-    let index: Int
-}
+/*
+        A <-- Vertex
+       /  \<-- Edge
+      /    \ 10 <- Weight
+    B ------ C
+ */
 
-struct Edge<T>: Equatable where T: Equatable, T: Hashable {
-    let from: Vertex<T>
-    let to: Vertex<T>
+class Vertex<T> {
+    var value: T
+    var visited: Bool?
+    var neighbours: [Edge<T>]?
     
-    let weight: Double?
-}
-
-class EdgeList<T> where T: Equatable, T:Hashable {
-    var vertex: Vertex<T>
-    var edges: [Edge<T>]? = nil
-    
-    init(vertex: Vertex<T>) {
-        self.vertex = vertex
+    init(value: T) {
+        self.value = value
+        self.visited = false
+        self.neighbours = []
     }
+}
+
+class Edge<T> {
+    var neighbour: Vertex<T>?
     
-    func addEdge(edge: Edge<T>) {
-        edges?.append(edge)
+    init(neighbour: Vertex<T>) {
+        self.neighbour = neighbour
     }
 }
