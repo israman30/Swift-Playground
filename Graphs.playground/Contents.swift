@@ -26,3 +26,24 @@ class Edge<T> {
         self.neighbour = neighbour
     }
 }
+
+class Graph<T> {
+    var vertices: [Vertex<T>]?
+    
+    init() {
+        self.vertices = []
+    }
+    
+    func addVertex(_ value: T) -> Vertex<T> {
+        let vertex = Vertex(value: value)
+        vertices?.append(vertex)
+        return vertex
+    }
+    
+    func addEdge(_ source: Vertex<T>, neighbour: Vertex<T>) {
+        let edge = Edge(neighbour: neighbour)
+        source.neighbours?.append(edge)
+    }
+}
+
+//let graph =
