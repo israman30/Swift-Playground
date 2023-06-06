@@ -50,3 +50,50 @@ class SomeViewController {
 
 let object = SomeViewController()
 object.connect()
+
+
+// Another case where protocl extension takes care of handling user and does not depends on abstraction.
+
+
+struct User {
+    let name: String
+    let email: String
+}
+
+protocol UserHandlerProtocol {
+    func add(_ user: User)
+    func delete(_ user: User)
+    func edit(_ user: User)
+}
+
+protocol DataStoreProtocol {
+    func insert(_ user: User)
+    func delete(_ user: User)
+    func edit(_ user: User)
+}
+
+class DataBase: DataStoreProtocol {
+    func insert(_ user: User) {}
+    func delete(_ user: User) {}
+    func edit(_ user: User) {}
+}
+
+final class UserHandler: UserHandlerProtocol {
+    private let dataBase: DataStoreProtocol
+    
+    init(_ dataBase: DataStoreProtocol) {
+        self.dataBase = dataBase
+    }
+    
+    func add(_ user: User) {
+        dataBase.insert(user)
+    }
+    
+    func delete(_ user: User) {
+        dataBase.delete(user)
+    }
+    
+    func edit(_ user: User) {
+        dataBase.edit(user)
+    }
+}
