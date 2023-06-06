@@ -18,7 +18,7 @@ func mostCommonElement(of array: [Int]) -> Int {
     return -1
 }
 
-mostCommonElement(of: array)
+//mostCommonElement(of: array)
 
 /// Most Common found looping in the array and checking in the dictionary for max() value
 func mostCommonElement2(of array: [Int]) -> (value: Int, count: Int) {
@@ -31,7 +31,7 @@ func mostCommonElement2(of array: [Int]) -> (value: Int, count: Int) {
     }
     return (0, 0)
 }
-mostCommonElement2(of: array)
+//mostCommonElement2(of: array)
 
 /// Most Common usinge reduce in the dictionary and checking for the max() value
 func mosCommon3(of array: [Int]) -> (value: Int, count: Int) {
@@ -43,4 +43,29 @@ func mosCommon3(of array: [Int]) -> (value: Int, count: Int) {
     return (0, 0)
 }
 
-mosCommon3(of: array)
+//mosCommon3(of: array)
+
+var elements = ["+5A", "-5B", "3E", "+5A"]
+var dict = [String:Int]()
+
+for element in elements {
+    if let count = dict[element] {
+        print(count)
+        dict[element] = count + 1
+    } else {
+        dict[element] = 1
+    }
+}
+print(dict)
+
+func isSum(a: String) -> Bool {
+    for i in a {
+        if i == "+" {
+            return  true
+        } else {
+            return false
+        }
+    }
+    return false
+}
+isSum(a: "+5A")
