@@ -111,3 +111,33 @@ graph.addEdge(node3, neighbour: node6)
 graph.addEdge(node3, neighbour: node7)
 graph.addEdge(node4, neighbour: node7)
 graph.addEdge(node5, neighbour: node8)
+
+func breadthFirst(_ source: Vertex<Int>) -> [Int] {
+    var queue = Queue<Vertex<Int>>()
+    queue.enqueue(source)
+    var exploredVertices = [source.value]
+    source.visited = true
+    while let vertex = queue.dequeue() {
+        for edge in vertex.neighbours! {
+            let neighbourVertex = edge.neighbour
+            if !neighbourVertex!.visited! {
+                queue.enqueue(neighbourVertex!)
+                neighbourVertex!.visited = true
+                exploredVertices.append(neighbourVertex!.value)
+            }
+        }
+    }
+    return exploredVertices
+}
+
+func depthFirstSearch(_ source: Vertex<Int>) -> [Int] {
+    var exploredNode = [source.value]
+    source.visited = true
+    
+    for edge in source.neighbours! {
+        if !edge.neighbour!.visited! {
+            exploredNode += depthFirstSearch(edge.neighbour!)
+        }
+    }
+    return exploredNode
+}
