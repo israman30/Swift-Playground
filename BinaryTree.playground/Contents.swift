@@ -180,6 +180,31 @@ extension BinaryTree {
         }
         return 1 + max(leftNode?.height() ?? 0, rightNode?.height() ?? 0)
     }
+    
+    func maxDepth(root: BinaryTree?) -> Int {
+        guard root != nil else { return 0 }
+        let leftDepth = maxDepth(root: root?.leftNode)
+        let rightDepth = maxDepth(root: root?.rightNode)
+        
+        if rightDepth < leftDepth {
+            return leftDepth + 1
+        } else {
+            return rightDepth + 1
+        }
+    }
+    
+    // Mirror traverse each branch and swap the branches
+    func mirrorTree(root: BinaryTree?) -> BinaryTree? {
+        guard root != nil else  { return nil }
+        mirrorTree(root: root?.leftNode)
+        mirrorTree(root: root?.rightNode)
+        
+        let temp = root?.leftNode
+        root?.leftNode = root?.rightNode
+        root?.rightNode = temp
+        
+        return root
+    }
 }
 
 extension BinaryTree {
