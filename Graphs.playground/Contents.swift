@@ -63,6 +63,10 @@ struct Queue<T> {
         }
         return array.removeLast()
     }
+    
+    var isEmpty: Bool {
+        array.isEmpty
+    }
 }
 
 struct Stack<T> {

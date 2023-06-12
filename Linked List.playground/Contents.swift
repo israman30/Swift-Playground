@@ -163,6 +163,19 @@ class LinkedList {
             current = current?.next
         }
     }
+    
+    func removeDuplicateFromList(head: Node?) {
+        var current = head
+        var temp: Node?
+        while current?.next != nil {
+            if current?.value == current?.next?.value {
+                temp = current?.next?.next
+                current?.next = temp
+            }
+            current = current?.next
+        }
+    }
+    
 }
 
 
