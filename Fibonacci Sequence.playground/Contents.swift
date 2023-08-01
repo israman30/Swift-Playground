@@ -26,6 +26,7 @@ func fibRecursive(num: Int) -> Int {
     return fibRecursive(num: num - 1) + fibRecursive(num: num - 2)
 }
 fib(num: 10)
+
 for j in 0...10 {
     print(fibRecursive(num: j))
 }
