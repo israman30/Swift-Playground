@@ -83,3 +83,17 @@ func checkForBalance(_ word: String) -> Bool {
     return count == 0 ? true : false
 }
 checkForBalance("(())")
+
+func balanced(word: String) -> Bool {
+    var chars = [Character]()
+    for i in word {
+        if i == "(" {
+            chars.append(i)
+        } else if i == ")" {
+            chars.append(i)
+        }
+    }
+    print(chars)
+    return chars.contains("(") && chars.contains(")") ? true : false
+}
+balanced(word: "(helo)")
