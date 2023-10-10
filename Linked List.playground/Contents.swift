@@ -176,6 +176,19 @@ class LinkedList {
         }
     }
     
+    func getNode(with position: Int) -> Node? {
+        var counter = 1
+        var current = head
+        while current?.next != nil && counter <= position {
+            if counter == position {
+                return current
+            }
+            current = current?.next
+            counter += 1
+        }
+        return current
+    }
+    
 }
 
 
