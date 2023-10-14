@@ -164,6 +164,17 @@ extension BinaryTree {
         search(value: value) != nil
     }
     
+    func preorderSearch(_ node: BinaryTree?, value: Int) -> Bool {
+        if let node = node {
+            if node.value == value {
+                return true
+            } else {
+                return preorderSearch(node.leftNode, value: value) || preorderSearch(node.rightNode, value: value)
+            }
+        }
+        return false
+    }
+    
     func depth() -> Int {
         var node = self
         var count = 0
