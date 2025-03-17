@@ -68,4 +68,15 @@ func isSum(a: String) -> Bool {
     }
     return false
 }
-isSum(a: "+5A")
+//isSum(a: "+5A")
+
+func mostCommon(_ numbers: [Int]) -> Int {
+    var seen: Set<Int> = []
+    for number in numbers {
+        if seen.contains(number) {
+            return number
+        }
+        seen.insert(number)
+    }
+    return -1
+}
