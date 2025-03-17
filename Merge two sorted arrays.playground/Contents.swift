@@ -1,5 +1,9 @@
 import UIKit
 
+func mergeTwoSortedArrays(_ firstArray: [Int], _ secondArray: [Int]) -> [Int] {
+    return Array(Set(firstArray).union(Set(secondArray))).sorted()
+}
+
 func mergeTwoSortedArray(_ firstArray: [Int], _ secondArray: [Int]) -> [Int] {
     var meregedArray = [Int]()
     var firstIndex = 0
