@@ -216,6 +216,17 @@ extension BinaryTree {
         
         return root
     }
+    
+    func invert(tree root: BinaryTree?) -> BinaryTree? {
+        guard let root = root else { return nil }
+        (root.leftNode, root.rightNode) = (root.rightNode, root.leftNode)
+        invert(tree: root.leftNode)
+        invert(tree: root.rightNode)
+        
+        // or
+        (root.leftNode, root.rightNode) = (invert(tree: root.rightNode), invert(tree: root.leftNode))
+        return root
+    }
 }
 
 extension BinaryTree {
