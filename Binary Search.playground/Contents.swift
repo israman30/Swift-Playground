@@ -72,3 +72,13 @@ func binarySearchWithRange(on array: [Int], key: Int, range: Range<Int>) -> Bool
 }
 
 binarySearchWithRange(on: numbers, key: 3, range: 0..<numbers.count)
+
+
+// Search in an unsorted array
+func search(_ nums: [Int], _ target: Int) -> Int {
+    if nums.contains(target) {
+        guard let index = nums.index(of: target) else { return 0 }
+        return index
+    }
+    return -1
+}
