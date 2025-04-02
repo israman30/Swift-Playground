@@ -82,3 +82,19 @@ func search(_ nums: [Int], _ target: Int) -> Int {
     }
     return -1
 }
+
+// Search for first and last index of a given number
+func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+    var first = -1
+    var last = -1
+    var result = [Int]()
+    for i in 0..<nums.count {
+        if nums[i] == target && first == -1 {
+            first = i
+        }
+        if nums[nums.count - 1 - i] == target && last == -1 {
+            last = nums.count - 1 - i
+        }
+    }
+    return [first, last]
+}
