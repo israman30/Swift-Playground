@@ -98,3 +98,21 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
     }
     return [first, last]
 }
+
+// Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+    var first = 0
+    var last = nums.count - 1
+    while first <= last {
+        let mid = (first + last) / 2
+        if nums[mid] == target {
+            return mid
+        }
+        if nums[mid] < target {
+            first = mid + 1
+        } else {
+            last = mid - 1
+        }
+    }
+    return first
+}
