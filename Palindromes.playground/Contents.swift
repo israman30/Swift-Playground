@@ -66,8 +66,22 @@ func hasPalindrome(for sentence: String) -> Bool {
 
 hasPalindrome(for: "It's a really nice day and anna goes for a run")
 
-var number = 0 {
-    didSet {
-        
+/// Palindrome of a number
+func isPalindrome(_ x: Int) -> Bool {
+    if x < 0 {
+        return false
     }
+    
+    var original = x
+    var reversed = 0
+    
+    while original != 0 {
+        let digit = original % 10
+        reversed = reversed * 10 + digit
+        original /= 10
+    }
+    
+    return x == reversed
 }
+
+
