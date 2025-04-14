@@ -85,3 +85,14 @@ func isPalindrome(_ x: Int) -> Bool {
 }
 
 
+func isPalindrome(_ input: String) -> Bool {
+    /// Cleaning the input
+    let cleanedString = input.lowercased().filter { $0.isLetter || $0.isNumber }
+    
+    /// Reversing  the cleaned string
+    let reversedString = String(cleanedString.reversed())
+    
+    /// Comparing
+    return cleanedString == reversedString
+}
+
