@@ -189,6 +189,19 @@ class LinkedList {
         return current
     }
     
+    func compareLikedList(head1: Node?, head2: Node?) -> Bool {
+        var current1 = head1
+        var current2 = head2
+        while let n1 = current1, let n2 = current2 {
+            if n1.value != n1.value {
+                return false
+            }
+            current1 = n1.next
+            current2 = n2.next
+        }
+        return current1 == nil && current2 == nil
+    }
+    
 }
 
 
