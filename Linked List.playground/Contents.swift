@@ -110,14 +110,6 @@ class LinkedList {
         }
     }
     
-    func reverePrintList(head: Node?) {
-        guard let head = head else {
-            return
-        }
-        reverePrintList(head: head.next)
-        print(head.value, terminator: " ")
-    }
-    
     func mergeTwoList(_ list1: Node?, list2: Node?) -> Node? {
         if list1 == nil && list2 == nil {
             return nil
