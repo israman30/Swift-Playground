@@ -84,6 +84,40 @@ class LinkedList {
         return prev
     }
     
+    func reversereListRecursive(head: Node?) -> Node? {
+        guard let head = head else {
+            return nil
+        }
+        guard let nextNode = head.next else {
+            return head
+        }
+        let reversedRestOfList = reversereListRecursive(head: nextNode)
+        nextNode.next = head
+        head.next = nil
+        return reversedRestOfList
+    }
+    
+    func reversedPrintList(_ head: Node?) {
+        var stack: [Int] = []
+        var current = head
+        
+        while let node = current {
+            stack.append(node.value)
+            current = node.next
+        }
+        while let value = stack.popLast() {
+            print(value, terminator: " ")
+        }
+    }
+    
+    func reverePrintList(head: Node?) {
+        guard let head = head else {
+            return
+        }
+        reverePrintList(head: head.next)
+        print(head.value, terminator: " ")
+    }
+    
     func mergeTwoList(_ list1: Node?, list2: Node?) -> Node? {
         if list1 == nil && list2 == nil {
             return nil
