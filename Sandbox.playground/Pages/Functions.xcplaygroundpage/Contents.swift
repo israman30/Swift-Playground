@@ -116,3 +116,10 @@ let modifiedArray = twoDimensionalArray.flatMap { subArray in
  In this case, flatMap applies the transformation and filtering operations to each element within the nested arrays, and the result is a single flattened array with the modified values.
  */
 print("Modified array: \(modifiedArray)")
+
+/// `Chaining functions`
+let result = numbers
+    .filter { $0 % 2 == 0 } // Keep only even numbers
+    .map { $0 * $0 } // Square each remaining number
+    
+print("Chainning functions: \(result)")
