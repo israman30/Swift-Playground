@@ -43,4 +43,39 @@ print("Sorted by: \(sortedByNumbers)")
 let numbersAsString = numbers.map { char in
     String(char)
 }
+/**
+ Also can be wriiten as
+ ```
+ let numbersAsString = numbers.map { String($0) }
+ ```
+ */
 print("Mapping to string: \(numbersAsString)")
+
+/**
+ `Filter
+ the filter method will return an array that has only elements that pass your filter specified in your closure.
+ 
+ ```
+ let elements = numbers.filter( isIncluded: (Int) throws -> Bool)
+ ```
+ */
+let numbersLessThanFive = numbers.filter { $0 < 5 }
+print("Filtering less than five: \(numbersLessThanFive)")
+
+/**
+ `Reduce
+ The reduce function allows you to combine all the elements in an array and return an object of any type (generics!!!!)
+ ```
+ let element = numbers.reduce(initialResult: Result, nextPartialResult: (Result, Int) throws -> Result)
+ ```
+ Notice that reduce has two parameters — initialResult and nextPartialResult. We need the initial result to tell us where to start, and the method then operates on that result based on the logic in the closure.
+
+ */
+let sumAllNumbers = numbers.reduce(0, +)
+print("Sum all elements: \(sumAllNumbers)")
+
+let sumAllNumberToString = numbers.reduce("") { result, number in
+    result + String(number)
+}
+print("Sum all elements to string: \(sumAllNumberToString)")
+
