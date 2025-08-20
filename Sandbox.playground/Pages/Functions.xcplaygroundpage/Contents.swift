@@ -79,3 +79,37 @@ let sumAllNumberToString = numbers.reduce("") { result, number in
 }
 print("Sum all elements to string: \(sumAllNumberToString)")
 
+/**
+ `Flattening Nested Arrays
+ Suppose you have an array of arrays, and you want to flatten them into a single array. Here’s how you can use flatMap to achieve this:
+ ```
+ twoDimensionalArray.flatMap(transform: ([Int]) throws -> Sequence)
+ ```
+ */
+let twoDimensionalArray = [[1, 2], [3, 4], [5, 6]]
+
+let flattedArray = twoDimensionalArray.flatMap { $0 }
+print("Flatted array: \(flattedArray)")
+
+/**
+ `compactMap:
+ Similar to map, but it transforms elements and automatically discards any nil results.
+ ```
+ optionalValues.compactMap(transform: (Int?) throws -> ElementOfResult?)
+ ```
+ */
+let optionalValues: [Int?] = [1, 2, nil, 3, nil, 4]
+
+let compactedValues: [Int] = optionalValues.compactMap { $0 }
+print("Compacted values: \(compactedValues)")
+
+
+/**
+ `Sample of using nested functions
+ */
+let modifiedArray = twoDimensionalArray.flatMap { subArray in
+    return subArray.compactMap { element in
+        numbers.contains(element) ? element : nil
+    }
+}
+print("Modified array: \(modifiedArray)")
