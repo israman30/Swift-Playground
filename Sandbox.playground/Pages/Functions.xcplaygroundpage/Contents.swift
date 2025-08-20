@@ -112,4 +112,7 @@ let modifiedArray = twoDimensionalArray.flatMap { subArray in
         numbers.contains(element) ? element : nil
     }
 }
+/**
+ In this case, flatMap applies the transformation and filtering operations to each element within the nested arrays, and the result is a single flattened array with the modified values.
+ */
 print("Modified array: \(modifiedArray)")
