@@ -143,8 +143,8 @@ var word = "Hello World"
 
 func reverseString(_ input: inout String) -> String? {
     var input = Array(input)
-    for i in 0..<input.count / 2 {
-        input.swapAt(i, input.count - i - 1)
+    (0..<input.count / 2).forEach {
+        input.swapAt($0, input.count - $0 - 1)
     }
     return input.map(String.init).joined()
 }
