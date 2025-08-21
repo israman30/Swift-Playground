@@ -123,3 +123,17 @@ let result = numbers
     .map { $0 * $0 } // Square each remaining number
     
 print("Chainning functions: \(result)")
+
+// FizzBuzz
+let fizzBuzz: [String] = (1...100).map { n in
+    if n % 15 == 0 {
+        return "Fizz Buzz"
+    } else if n % 3 == 0 {
+        return "Fizz"
+    } else if n % 5 == 0 {
+        return "Buzz"
+    } else {
+        return String(n)
+    }
+}
+print(fizzBuzz)
