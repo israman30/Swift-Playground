@@ -137,3 +137,15 @@ let fizzBuzz: [String] = (1...100).map { n in
     }
 }
 print(fizzBuzz)
+
+// Reverse string
+var word = "Hello World"
+
+func reverseString(_ input: inout String) -> String {
+    var input = Array(input)
+    for i in 0..<input.count / 2 {
+        input.swapAt(i, input.count - i - 1)
+    }
+    return input.map(String.init).joined()
+}
+reverseString(&word)
