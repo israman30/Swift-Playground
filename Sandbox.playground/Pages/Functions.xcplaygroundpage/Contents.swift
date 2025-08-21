@@ -141,7 +141,7 @@ print(fizzBuzz)
 // Reverse string
 var word = "Hello World"
 
-func reverseString(_ input: inout String) -> String? {
+func reverseString(_ input: inout String) -> String {
     var input = Array(input)
     (0..<input.count / 2).forEach {
         input.swapAt($0, input.count - $0 - 1)
