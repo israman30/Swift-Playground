@@ -79,3 +79,24 @@ struct Queue<T> {
         queue.count
     }
 }
+
+// Binary tree
+class BinaryTree<T> {
+    let value: T
+    var left: BinaryTree?
+    var right: BinaryTree?
+    
+    init(_ value: T) {
+        self.value = value
+    }
+}
+
+// Linked List
+class Node<T> {
+    let value: T
+    var next: Node<T>?
+    
+    init(_ value: T) {
+        self.value = value
+    }
+}
