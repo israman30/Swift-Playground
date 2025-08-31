@@ -31,3 +31,28 @@ var dictionaryVariable: [String: Int] = ["apple": 2, "banana": 5, "orange": 4]
 // Dimensional array
 var dimesinalArray: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
+// Stack
+/**
+-> A
+-> B
+-> C
+ */
+struct Stack<T> {
+    var stack: [T] = []
+    
+    mutating func push(_ element: T) {
+        stack.append(element)
+    }
+    
+    mutating func pop() -> T? {
+        stack.popLast()
+    }
+    
+    var isEmpty: Bool {
+        stack.isEmpty
+    }
+    
+    var count: Int {
+        stack.count
+    }
+}
