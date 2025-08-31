@@ -56,3 +56,26 @@ struct Stack<T> {
         stack.count
     }
 }
+// Queue
+/**
+ -> C -> B -> A
+ */
+struct Queue<T> {
+    var queue: [T] = []
+    
+    mutating func enqueue(_ element: T) {
+        queue.append(element)
+    }
+    
+    mutating func dequeue() -> T? {
+        queue.removeFirst()
+    }
+    
+    var isEmpty: Bool {
+        queue.isEmpty
+    }
+    
+    var count: Int {
+        queue.count
+    }
+}
