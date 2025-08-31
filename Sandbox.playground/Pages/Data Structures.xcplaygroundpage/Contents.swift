@@ -16,3 +16,18 @@ var doubleNumber: Double = 10.55
 
 // Boolean
 var booleanValue: Bool = true
+
+// Collections
+
+// Set
+var setVariable: Set<String> = ["apple", "banana", "orange"]
+
+// Array
+var arrayVariable: [String] = ["apple", "banana", "orange"]
+
+// Dictionary
+var dictionaryVariable: [String: Int] = ["apple": 2, "banana": 5, "orange": 4]
+
+// Dimensional array
+var dimesinalArray: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
