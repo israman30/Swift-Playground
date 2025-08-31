@@ -33,9 +33,9 @@ var dimesinalArray: [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 // Stack
 /**
--> A
+-> A last
 -> B
--> C
+-> C first
  */
 struct Stack<T> {
     var stack: [T] = []
@@ -48,7 +48,7 @@ struct Stack<T> {
         stack.popLast()
     }
     
-    var isEmpty: Bool {
+     var isEmpty: Bool {
         stack.isEmpty
     }
     
