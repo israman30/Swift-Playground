@@ -82,7 +82,6 @@ func checkForBalance(_ word: String) -> Bool {
     
     return count == 0 ? true : false
 }
-checkForBalance("(())")
 
 func balanced(word: String) -> Bool {
     var chars = [Character]()
@@ -96,4 +95,31 @@ func balanced(word: String) -> Bool {
     print(chars)
     return chars.contains("(") && chars.contains(")") ? true : false
 }
-balanced(word: "(helo)")
+
+func checkValidString(_ s: String) -> Bool {
+    var low = 0   // min open
+    var high = 0  // max open
+    
+    for char in s {
+        if char == "(" {
+            low += 1
+            high += 1
+        } else if char == ")" {
+            low -= 1
+            high -= 1
+        } else if char == "*" {
+            low -= 1      // treat as ")"
+            high += 1     // treat as "("
+        }
+        
+        if high < 0 {
+            return false // too many closing
+        }
+        
+        if low < 0 {
+            low = 0 // can't have negative min
+        }
+    }
+    
+    return low == 0
+}
