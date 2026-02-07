@@ -63,3 +63,31 @@ func sumOfTwoWithPointers(arr: [Int], target: Int) -> (Int, Int) {
  2 + 3 = 5
  5 == 5 return
  */
+
+func twoSum(_ nums: [Int], _ target: Int) -> Bool {
+    var seen = Set<Int>()
+    for num in nums {
+        if seen.contains(target - num) {
+            return true
+        }
+        seen.insert(num)
+    }
+    return false
+}
+/*
+ [1, 2, 3]
+ target: 5
+ 
+ 1st loop .......
+ seen contain = 5 - 1 = 4 <= false
+ seen.insert(1)
+ 
+ 2nd loop .......
+ seen [1]
+ seen contain 5 - 2 = 3 <= false
+ seen.insert(2)
+ 
+ 3rd loop .......
+ seen [1, 2]
+ seen contain 5 - 3 = 2 <= true
+ */
