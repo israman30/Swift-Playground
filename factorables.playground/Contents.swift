@@ -29,3 +29,13 @@ func factorable(_ n: Int) -> [Int] {
     }
     return factors
 }
+
+// isFactorable: Check if a number is factorable
+/*
+ 4 -> true  (factorable)
+ 3 -> false (factorable by it self)
+ */
+func isFactorable(_ n: Int) -> Bool {
+    guard n > 1 else { return false }
+    return factorable(n).count > 2
+}
